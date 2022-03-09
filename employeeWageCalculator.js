@@ -7,8 +7,8 @@ var Total_Emp_Wage = 0;
 var Emp_Working_Days = 0;
 var Emp_Absent_Days = 0;
 while (Total_Emp_Work_Hrs <= 100 && Emp_Working_Days < 20) {
-    var empCheck = Math.floor(Math.random() * 10) % 3;
-    switch (empCheck) {
+    var empAttendanceCheck = Math.floor(Math.random() * 10) % 2;
+    switch (empAttendanceCheck) {
         case 0: {
             Emp_Absent_Days++;
             console.log("Employee Is Absent");

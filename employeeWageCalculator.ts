@@ -9,10 +9,10 @@ var Emp_Working_Days: number = 0;
 var Emp_Absent_Days: number = 0;
 
 while (Total_Emp_Work_Hrs <= 100 && Emp_Working_Days < 20) {
-    
-    var empCheck = Math.floor(Math.random() * 10) % 3;
 
-    switch (empCheck) {
+    var empAttendanceCheck = Math.floor(Math.random() * 10) % 2;
+
+    switch (empAttendanceCheck) {
         case 0: {
             Emp_Absent_Days++;
             console.log("Employee Is Absent");
@@ -22,14 +22,11 @@ while (Total_Emp_Work_Hrs <= 100 && Emp_Working_Days < 20) {
         case 1: {
             
             console.log("Employee Is Present For FULL Day");
-            
             Emp_Work_Hrs = 8;
             break;
         }
         case 2: {
-            
             console.log("Employee Is Present For HALF Day");
-
             Emp_Work_Hrs = 4;
             break;
         }
@@ -42,7 +39,7 @@ while (Total_Emp_Work_Hrs <= 100 && Emp_Working_Days < 20) {
 
     Total_Emp_Work_Hrs += Emp_Work_Hrs;
     console.log("Employee Working Days Are: ", Emp_Working_Days);
-    console.log("Employee Absent Days Are: ", Emp_Absent_Days , "\n");
+    console.log("Employee Absent Days Are: ", Emp_Absent_Days, "\n");
 }
 Total_Emp_Wage = Emp_Rate_Per_Hr * Total_Emp_Work_Hrs;
 console.log("\nTotal Employee Workinh Hours In A Month: ", Total_Emp_Work_Hrs);
