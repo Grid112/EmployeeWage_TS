@@ -8,9 +8,9 @@ var Total_Emp_Wage: number = 0;
 var Emp_Working_Days: number = 0;
 var Emp_Absent_Days: number = 0;
 
-while (Total_Emp_Work_Hrs <= 100 && Emp_Working_Days < 20) {
+while (Total_Emp_Work_Hrs < 100 && Emp_Working_Days < 20) {
 
-    var empAttendanceCheck = Math.floor(Math.random() * 10) % 2;
+    var empAttendanceCheck = Math.floor(Math.random() * 10) % 3;
 
     switch (empAttendanceCheck) {
         case 0: {
