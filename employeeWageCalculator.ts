@@ -1,15 +1,18 @@
 console.log("\nWelcome to Employee Wage Calculator \n");
+
 class EmpWageBuilder {
 
     companyName: string;
     empRatePerHrs: number;
     workingDays: number;
     workingHrs: number;
-    totalempwage: number;
-    emphrs: number = 0;
-    totalemphrs: number = 0;
-    totalworkingday: number = 0;
+    totalEmpWage: number;
+    empHrs: number = 0;
+    totalEmpHrs: number = 0;
+    totalWorkingDay: number = 0;
     absentDay: number = 0;
+    fullTimeEmpWage: number = 8;
+    partTimeEmpWage: number = 4;
 
 
     constructor(companyName: string, emp_ratePerHrs: number, workingDays: number, workingHrs: number) {
@@ -21,34 +24,31 @@ class EmpWageBuilder {
 
     Function_EmpWage(): void {
 
-
-        while (this.totalemphrs <= this.workingHrs || this.totalworkingday < this.workingDays) {
+        while (this.totalEmpHrs <= this.workingHrs || this.totalWorkingDay < this.workingDays) {
 
             let CheckEmp = Math.floor(Math.random() * 10 % 3);
 
             switch (CheckEmp) {
                 case 1:
-                    this.emphrs = 8;
-                    console.log("Employee is full-time present----Days are : " + this.totalworkingday
-                        + " & Employee Hrs is : " + this.emphrs);
+                    this.empHrs = this.fullTimeEmpWage;
+                    // console.log("Employee is full-time present----Days are : " + this.totalWorkingDay
+                    //     + " & Employee Hrs is : " + this.empHrs);
                     break;
                 case 2:
-                    this.emphrs = 4;
-                    console.log("Employee is part-time present----Days are : " + this.totalworkingday
-                        + " & Employee Hrs is : " + this.emphrs);
+                    this.empHrs = this.partTimeEmpWage;
+                    // console.log("Employee is part-time present----Days are : " + this.totalWorkingDay
+                    //     + " & Employee Hrs is : " + this.empHrs);
                     break;
                 default:
-
-                    console.log("Employee is absent----Day are : " + this.absentDay);
-                    this.emphrs = 0;
-                    break;
+                    // console.log("Employee is absent----Day are : " + this.absentDay);
+                    this.empHrs = 0;
             }
             this.absentDay++;
-            this.totalworkingday++;
-            this.totalemphrs += this.emphrs;
+            this.totalWorkingDay++;
+            this.totalEmpHrs += this.empHrs;
         }
-        this.totalempwage = this.totalemphrs * this.empRatePerHrs;
-        console.log("company Name :", this.companyName, "And total Employee Wage In One Month Is :", this.totalempwage, "\n");
+        this.totalEmpWage = this.totalEmpHrs * this.empRatePerHrs;
+        console.log("company Name :", this.companyName, "And total Employee Wage In One Month Is :", this.totalEmpWage);
     }
 }
 
